@@ -23,11 +23,17 @@ class ChecklistViewController: UITableViewController {
         
     }
     
+    @IBAction func addItem(_ sender: Any) {
+        print("added item")
+    }
+
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todos.todos.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITable
+        View, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         let item = todos.todos[indexPath.row]
         configureText(for: cell, with: item)
@@ -42,6 +48,7 @@ class ChecklistViewController: UITableViewController {
             configureCheckmark(for: cell, with: item)
         }
     }
+
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         if let label = cell.viewWithTag(1000) as? UILabel {

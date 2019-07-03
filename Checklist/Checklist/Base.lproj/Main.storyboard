@@ -46,7 +46,13 @@
                             <outlet property="delegate" destination="xil-Jo-X2Y" id="WWP-uS-iBB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="J5H-hk-o76"/>
+                    <navigationItem key="navigationItem" title="Checklists" id="J5H-hk-o76">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ghm-Qn-fQ9">
+                            <connections>
+                                <action selector="addItem:" destination="xil-Jo-X2Y" id="XOS-z7-71q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJg-iL-qXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
