@@ -32,8 +32,7 @@ class ChecklistViewController: UITableViewController {
         return todos.todos.count
     }
     
-    override func tableView(_ tableView: UITable
-        View, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         let item = todos.todos[indexPath.row]
         configureText(for: cell, with: item)
