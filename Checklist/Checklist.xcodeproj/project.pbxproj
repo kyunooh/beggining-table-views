@@ -14,6 +14,7 @@
 		A1DA721322CCBAE600692815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1DA721122CCBAE600692815 /* LaunchScreen.storyboard */; };
 		A1DA721E22CCBAE600692815 /* ChecklistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA721D22CCBAE600692815 /* ChecklistTests.swift */; };
 		A1DA722922CCBAE600692815 /* ChecklistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA722822CCBAE600692815 /* ChecklistUITests.swift */; };
+		A1DA723822CCD0CF00692815 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA723722CCD0CF00692815 /* ChecklistItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A1DA722822CCBAE600692815 /* ChecklistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistUITests.swift; sourceTree = "<group>"; };
 		A1DA722A22CCBAE600692815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1DA723622CCC7B700692815 /* ProtocolsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ProtocolsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A1DA723722CCD0CF00692815 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				A1DA721122CCBAE600692815 /* LaunchScreen.storyboard */,
 				A1DA721422CCBAE600692815 /* Info.plist */,
 				A1DA723622CCC7B700692815 /* ProtocolsPlayground.playground */,
+				A1DA723722CCD0CF00692815 /* ChecklistItem.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DA723822CCD0CF00692815 /* ChecklistItem.swift in Sources */,
 				A1DA720B22CCBAE500692815 /* ChecklistViewController.swift in Sources */,
 				A1DA720922CCBAE500692815 /* AppDelegate.swift in Sources */,
 			);
