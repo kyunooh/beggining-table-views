@@ -47,6 +47,7 @@
 		A1DA722422CCBAE600692815 /* ChecklistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DA722822CCBAE600692815 /* ChecklistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistUITests.swift; sourceTree = "<group>"; };
 		A1DA722A22CCBAE600692815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1DA723622CCC7B700692815 /* ProtocolsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ProtocolsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				A1DA720F22CCBAE600692815 /* Assets.xcassets */,
 				A1DA721122CCBAE600692815 /* LaunchScreen.storyboard */,
 				A1DA721422CCBAE600692815 /* Info.plist */,
+				A1DA723622CCC7B700692815 /* ProtocolsPlayground.playground */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
