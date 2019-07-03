@@ -52,7 +52,13 @@ class ChecklistViewController: UITableViewController {
             configureCheckmark(for: cell, with: item)
         }
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        todos.todos.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+            tableView.deleteRows(at: indexPaths, with: .automatic
+        )
+    }
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         if let label = cell.viewWithTag(1000) as? UILabel {
