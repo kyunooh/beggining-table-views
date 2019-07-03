@@ -24,7 +24,12 @@ class ChecklistViewController: UITableViewController {
     }
     
     @IBAction func addItem(_ sender: Any) {
-        print("added item")
+        let newRowIndex = todos.todos.count
+        _ = todos.newTodo()
+        
+        let indexPath = IndexPath(row: newRowIndex, section:0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
 
     
