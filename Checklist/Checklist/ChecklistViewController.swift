@@ -19,7 +19,8 @@ class ChecklistViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +55,7 @@ class ChecklistViewController: UITableViewController {
         } else {
             cell.accessoryType = .none
         }
-        toggleChecked()
+        item.toggleChecked()
     }
     
 }
