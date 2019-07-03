@@ -10,15 +10,10 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
     
-    var items: [ChecklistItem] = []
+    var todos: TodoList
     
     required init?(coder aDecoder: NSCoder) {
-        for i in 1 ... 100 {
-            let item = ChecklistItem()
-            item.text = "This is \(i)"
-            items.append(item)
-        }
-        
+        todos = TodoList()
         super.init(coder: aDecoder)
     }
     
@@ -28,28 +23,38 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return todos.todos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
-        cell.textLabel.text = items[indexPath.row].text
-        
+        let item = todos.todos[indexPath.row]
+        configureText(for: cell, with: item)
+        configureCheckmark(for: cell, with: item)
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            configureCheckmark(for:cell, at: indexPath)
             tableView.deselectRow(at: indexPath, animated: true)
+            let item = todos.todos[indexPath.row]
+            configureCheckmark(for: cell, with: item)
         }
     }
     
-    func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
-        if cell.accessoryType == .none {
+    func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+        if let label = cell.viewWithTag(1000) as? UILabel {
+            label.text = item.text
+        }
+    }
+    
+    func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+        if item.checked {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
         }
+        toggleChecked()
     }
     
 }
