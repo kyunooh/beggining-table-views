@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="J5H-hk-o76">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ghm-Qn-fQ9">
                             <connections>
-                                <segue destination="5Cb-1B-LJo" kind="show" id="pDn-UI-ybB"/>
+                                <segue destination="5Cb-1B-LJo" kind="show" identifier="AddItemSegue" id="pDn-UI-ybB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="-164" y="19"/>
         </scene>
-        <!--Add Item Table View Controller-->
+        <!--Add Item-->
         <scene sceneID="6Iz-db-TCs">
             <objects>
                 <tableViewController id="5Cb-1B-LJo" customClass="AddItemTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,9 +103,17 @@
                             <outlet property="delegate" destination="5Cb-1B-LJo" id="L67-NE-gV3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="t9v-nG-HWH">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mMg-iI-dA7"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="T4p-fi-bxI"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="t9v-nG-HWH">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mMg-iI-dA7">
+                            <connections>
+                                <action selector="cancel:" destination="5Cb-1B-LJo" id="61g-fb-bFU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="T4p-fi-bxI">
+                            <connections>
+                                <action selector="done:" destination="5Cb-1B-LJo" id="deO-V2-3Nl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>

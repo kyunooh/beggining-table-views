@@ -8,14 +8,29 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+    func addItemViewControllerDidCancel(_ controller: AddItemTableViewController)
+    func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem)
+}
+
 class AddItemTableViewController: UITableViewController {
     
+    weak var delegate: AddItemViewControllerDelegate?
+    
     @IBOutlet weak var textField: UITextField!
+    
     @IBAction func cancel(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        delegate?.addItemViewControllerDidCancel(self)
     }
     @IBAction func done(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        let item = ChecklistItem()
+        if let textFieldText = textField.text {
+            item.text = textFieldText
+        }
+        item.checked = false
+        delegate?.addItemViewController(self, didFinishAdding: item)
         print("Contents of textField\(textField.text)")
     }
         
@@ -62,3 +77,5 @@ extension AddItemTableViewController: UITextFieldDelegate {
         return true
     }
 }
+
+
