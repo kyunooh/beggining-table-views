@@ -10,6 +10,7 @@ import UIKit
 
 class AddItemTableViewController: UITableViewController {
 
+    @IBOutlet weak var textField: UITextField!
     @IBAction func cancel(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }

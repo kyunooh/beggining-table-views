@@ -76,6 +76,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="owE-ph-jJo" id="O1k-FC-Iy6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywF-zI-LaR">
+                                                    <rect key="frame" x="20" y="7.5" width="374" height="28.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ywF-zI-LaR" firstAttribute="leading" secondItem="O1k-FC-Iy6" secondAttribute="leading" constant="20" symbolic="YES" id="FMR-cB-6zq"/>
+                                                <constraint firstAttribute="trailing" secondItem="ywF-zI-LaR" secondAttribute="trailing" constant="20" symbolic="YES" id="Xxo-DY-IvD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ywF-zI-LaR" secondAttribute="bottom" constant="-3" id="bVg-VM-h5A"/>
+                                                <constraint firstItem="ywF-zI-LaR" firstAttribute="centerY" secondItem="O1k-FC-Iy6" secondAttribute="centerY" id="gSe-V0-urk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -99,6 +113,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="textField" destination="ywF-zI-LaR" id="EjK-t8-rlQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27L-dK-rJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
