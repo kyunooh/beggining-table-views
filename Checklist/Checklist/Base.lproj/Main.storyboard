@@ -77,11 +77,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywF-zI-LaR">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywF-zI-LaR">
                                                     <rect key="frame" x="20" y="7.5" width="374" height="28.5"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="5Cb-1B-LJo" id="q7h-Bv-9iX"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -101,19 +104,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="t9v-nG-HWH">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mMg-iI-dA7">
-                            <connections>
-                                <action selector="cancel:" destination="5Cb-1B-LJo" id="ARL-HU-zry"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="T4p-fi-bxI">
-                            <connections>
-                                <action selector="done:" destination="5Cb-1B-LJo" id="oan-8N-zKW"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mMg-iI-dA7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="T4p-fi-bxI"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addBarButton" destination="T4p-fi-bxI" id="FDG-FF-6L7"/>
+                        <outlet property="cancelBarButton" destination="mMg-iI-dA7" id="8EQ-hj-gpn"/>
                         <outlet property="textField" destination="ywF-zI-LaR" id="EjK-t8-rlQ"/>
                     </connections>
                 </tableViewController>
