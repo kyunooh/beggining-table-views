@@ -18,27 +18,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="wJ8-oZ-TVx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="wJ8-oZ-TVx">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wJ8-oZ-TVx" id="GBh-sl-M3y">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAA-Sl-uB2">
-                                            <rect key="frame" x="20" y="11" width="330" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKN-SC-D53">
+                                            <rect key="frame" x="20" y="10" width="13" height="22.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAA-Sl-uB2">
+                                            <rect key="frame" x="41" y="10" width="281" height="22.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="hAA-Sl-uB2" secondAttribute="trailing" constant="20" symbolic="YES" id="1Ht-du-2bM"/>
-                                        <constraint firstItem="hAA-Sl-uB2" firstAttribute="leading" secondItem="GBh-sl-M3y" secondAttribute="leading" constant="20" symbolic="YES" id="Pom-I1-a8o"/>
-                                        <constraint firstAttribute="bottom" secondItem="hAA-Sl-uB2" secondAttribute="bottom" priority="750" constant="11.5" id="Q5c-wA-io1"/>
-                                        <constraint firstItem="hAA-Sl-uB2" firstAttribute="top" secondItem="GBh-sl-M3y" secondAttribute="top" priority="750" constant="11" id="cgt-ks-38T"/>
+                                        <constraint firstItem="nKN-SC-D53" firstAttribute="top" secondItem="GBh-sl-M3y" secondAttribute="top" constant="10" id="4JY-MB-6Rp"/>
+                                        <constraint firstItem="hAA-Sl-uB2" firstAttribute="top" secondItem="GBh-sl-M3y" secondAttribute="top" constant="10" id="8Nw-Ci-lQv"/>
+                                        <constraint firstAttribute="bottom" secondItem="hAA-Sl-uB2" secondAttribute="bottom" constant="11" id="Dyk-0n-mTI"/>
+                                        <constraint firstAttribute="trailing" secondItem="hAA-Sl-uB2" secondAttribute="trailing" constant="20" symbolic="YES" id="LAG-ff-gTF"/>
+                                        <constraint firstAttribute="bottom" secondItem="nKN-SC-D53" secondAttribute="bottom" constant="11" id="vDL-eZ-hNe"/>
+                                        <constraint firstItem="hAA-Sl-uB2" firstAttribute="leading" secondItem="nKN-SC-D53" secondAttribute="trailing" constant="8" symbolic="YES" id="wsF-Dr-PJ6"/>
+                                        <constraint firstItem="nKN-SC-D53" firstAttribute="leading" secondItem="GBh-sl-M3y" secondAttribute="leading" constant="20" symbolic="YES" id="yLJ-Wr-YTV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5Cb-1B-LJo" kind="show" identifier="EditItemSegue" id="Bxp-YV-Xwm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -59,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="-164" y="19"/>
         </scene>
-        <!--Add Item-->
+        <!--Add Item Table View Controller-->
         <scene sceneID="6Iz-db-TCs">
             <objects>
                 <tableViewController id="5Cb-1B-LJo" customClass="AddItemTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,13 +115,13 @@
                             <outlet property="delegate" destination="5Cb-1B-LJo" id="L67-NE-gV3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Item" id="t9v-nG-HWH">
+                    <navigationItem key="navigationItem" id="t9v-nG-HWH">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="mMg-iI-dA7">
                             <connections>
                                 <action selector="cancel:" destination="5Cb-1B-LJo" id="61g-fb-bFU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="T4p-fi-bxI">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="T4p-fi-bxI">
                             <connections>
                                 <action selector="done:" destination="5Cb-1B-LJo" id="deO-V2-3Nl"/>
                             </connections>
@@ -145,4 +157,7 @@
             <point key="canvasLocation" x="-946.37681159420299" y="-25.446428571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pDn-UI-ybB"/>
+    </inferredMetricsTieBreakers>
 </document>
