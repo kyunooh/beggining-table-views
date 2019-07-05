@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(_ controller: AddItemTableViewController)
-    func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem)
-    func addItemViewController(_ controller: AddItemTableViewController, didFinishEditing item: ChecklistItem)
+protocol ItemDetailViewControllerDelegate: class {
+    func addItemViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
-class AddItemTableViewController: UITableViewController {
+class ItemDetailViewController: UITableViewController {
     
-    weak var delegate: AddItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     weak var todos: TodoList?
     weak var itemToEdit: ChecklistItem?
     
@@ -25,21 +25,20 @@ class AddItemTableViewController: UITableViewController {
     
     @IBAction func cancel(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        delegate?.addItemViewControllerDidCancel(self)  
+        delegate?.addItemViewControllerDidCancel(self)
     }
     @IBAction func done(_ sender: Any) {
-        print(itemToEdit)
         if let item = itemToEdit, let text = textField.text {
             print(item)
             item.text = text
-            delegate?.addItemViewController(self, didFinishEditing: item)
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             if let item = todos?.newTodo() {
                 if let textFieldText = textField.text {
                     item.text = textFieldText
                 }
                 item.checked = false
-                delegate?.addItemViewController(self, didFinishAdding: item)
+                delegate?.itemDetailViewController(self, didFinishAdding: item)
             }
         }
         navigationController?.popViewController(animated: true)
@@ -72,7 +71,7 @@ class AddItemTableViewController: UITableViewController {
     
 }
 
-extension AddItemTableViewController: UITextFieldDelegate {
+extension ItemDetailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false

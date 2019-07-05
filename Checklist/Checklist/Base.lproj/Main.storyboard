@@ -71,11 +71,11 @@
             </objects>
             <point key="canvasLocation" x="-164" y="19"/>
         </scene>
-        <!--Add Item Table View Controller-->
+        <!--Item Detail View Controller-->
         <scene sceneID="6Iz-db-TCs">
             <objects>
-                <tableViewController id="5Cb-1B-LJo" customClass="AddItemTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="SAO-X4-8zO" customClass="AddItemViewController">
+                <tableViewController id="5Cb-1B-LJo" customClass="ItemDetailViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="SAO-X4-8zO" customClass="itemDetailViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -158,6 +158,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pDn-UI-ybB"/>
+        <segue reference="Bxp-YV-Xwm"/>
     </inferredMetricsTieBreakers>
 </document>
