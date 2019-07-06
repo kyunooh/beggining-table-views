@@ -51,6 +51,8 @@ class ChecklistViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+    
     @IBAction func addItem(_ sender: Any) {
         let newRowIndex = todos.todos.count
         _ = todos.newTodo()
@@ -74,14 +76,15 @@ class ChecklistViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todos.todos.count
+        return tableData[section] == nil ? 0 : tableData[section]!.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
-        let item = todos.todos[indexPath.row]
-        configureText(for: cell, with: item)
-        configureCheckmark(for: cell, with: item)
+        if let item = tableData[indexPath.section]?[indexPath.row] {
+            configureText(for: cell, with: item)
+            configureCheckmark(for: cell, with: item)
+        }
         return cell
     }
     
@@ -139,8 +142,24 @@ class ChecklistViewController: UITableViewController {
             }
         }
     }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return tableData.count
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return UILocalizedIndexedCollation.current().sectionTitles
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return UILocalizedIndexedCollation.current().sectionTitles[section]
+    }
     
 }
+
 
 
 extension ChecklistViewController: ItemDetailViewControllerDelegate {
