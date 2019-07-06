@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A152CE7322D072A700D955EE /* ChecklistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152CE7222D072A700D955EE /* ChecklistTableViewCell.swift */; };
 		A172A36022CDAE1F00126C3A /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172A35F22CDAE1F00126C3A /* ItemDetailViewController.swift */; };
 		A1DA720922CCBAE500692815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA720822CCBAE500692815 /* AppDelegate.swift */; };
 		A1DA720B22CCBAE500692815 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA720A22CCBAE500692815 /* ChecklistViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A152CE7222D072A700D955EE /* ChecklistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableViewCell.swift; sourceTree = "<group>"; };
 		A172A35F22CDAE1F00126C3A /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		A1DA720522CCBAE500692815 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DA720822CCBAE500692815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				A1DA720822CCBAE500692815 /* AppDelegate.swift */,
 				A1DA720A22CCBAE500692815 /* ChecklistViewController.swift */,
+				A152CE7222D072A700D955EE /* ChecklistTableViewCell.swift */,
 				A1DA720C22CCBAE500692815 /* Main.storyboard */,
 				A172A35F22CDAE1F00126C3A /* ItemDetailViewController.swift */,
 				A1DA720F22CCBAE600692815 /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 				A172A36022CDAE1F00126C3A /* ItemDetailViewController.swift in Sources */,
 				A1DA720B22CCBAE500692815 /* ChecklistViewController.swift in Sources */,
 				A1DA720922CCBAE500692815 /* AppDelegate.swift in Sources */,
+				A152CE7322D072A700D955EE /* ChecklistTableViewCell.swift in Sources */,
 				A1DA723A22CCEA2600692815 /* TodoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
