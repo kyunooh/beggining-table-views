@@ -21,6 +21,7 @@ class ChecklistViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
+        tableView.allowsMultipleSelectionDuringEditing = true
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -43,6 +44,18 @@ class ChecklistViewController: UITableViewController {
     }
 
     
+    @IBAction func deleteItems(_ sender: Any) {
+        if let selectedRows = tableView.indexPathsForSelectedRows {
+            var items = [ChecklistItem]()
+            for indexPath in selectedRows {
+                items.append(todos.todos[indexPath.row])
+            }
+            todos.remove(items: items)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: selectedRows, with: .automatic)
+            tableView.endUpdates()
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todos.todos.count
     }
@@ -56,6 +69,9 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.isEditing {
+            return
+        }
         if let cell = tableView.cellForRow(at: indexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             let item = todos.todos[indexPath.row]

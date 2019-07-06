@@ -51,7 +51,7 @@
                                 <connections>
                                     <outlet property="checkmarkLabel" destination="nKN-SC-D53" id="qJb-48-Lto"/>
                                     <outlet property="todoTextLabel" destination="hAA-Sl-uB2" id="fjZ-VK-leT"/>
-                                    <segue destination="5Cb-1B-LJo" kind="show" identifier="EditItemSegue" id="Bxp-YV-Xwm"/>
+                                    <segue destination="5Cb-1B-LJo" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="eSq-0w-Z79"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,11 +61,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklists" id="J5H-hk-o76">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ghm-Qn-fQ9">
-                            <connections>
-                                <segue destination="5Cb-1B-LJo" kind="show" identifier="AddItemSegue" id="pDn-UI-ybB"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="ghm-Qn-fQ9">
+                                <connections>
+                                    <segue destination="5Cb-1B-LJo" kind="show" identifier="AddItemSegue" id="pDn-UI-ybB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="qHd-Di-fbY">
+                                <connections>
+                                    <action selector="deleteItems:" destination="xil-Jo-X2Y" id="szh-H6-LXx"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
@@ -160,6 +167,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bxp-YV-Xwm"/>
+        <segue reference="eSq-0w-Z79"/>
     </inferredMetricsTieBreakers>
 </document>
